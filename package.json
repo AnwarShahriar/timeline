@@ -1,0 +1,17 @@
+{
+  "name": "timeline",
+  "version": "1.0.0",
+  "description": "",
+  "main": "app.ja",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "simple-git": "^1.80.1"
+  },
+  "devDependencies": {
+    "electron": "1.7.9"
+  }
+}
