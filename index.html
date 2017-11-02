@@ -7,22 +7,20 @@
 <body>
     <div id="container"></div>
     <script>
-        const git = require('simple-git')(".")
-        git.log((err, data) => {
-            const container = document.getElementById('container')
-            const logs = data.all
+        const commitScrapper = require('./commit-scrapper')
+        commitScrapper.fetchLogs((err, logs) => {
             logs.forEach((log) => {
                 console.log(log)
                 let author = document.createElement('p')
                 author.innerHTML = `authorvalue: ${log.author_name}`
-
+        
                 let commitMsg = document.createElement('p')
                 commitMsg.innerHTML = `commit-message: ${log.message}`
-
+        
                 container.appendChild(author)
                 container.appendChild(commitMsg)
-            });
-        })
+            })
+        }, { reverse: true })
     </script>
 </body>
 </html>
